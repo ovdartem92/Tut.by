@@ -29,14 +29,6 @@ public final class PropertyManager {
         return PROPERTIES.getProperty("home.url");
     }
 
-    public static String getEmail() {
-        return PROPERTIES.getProperty("email");
-    }
-
-    public static String getPassword() {
-        return PROPERTIES.getProperty("password");
-    }
-
     public static BrowserType getBrowserType() {
         String browserType = PROPERTIES.getProperty("browser").toUpperCase();
         return BrowserType.valueOf(browserType);
