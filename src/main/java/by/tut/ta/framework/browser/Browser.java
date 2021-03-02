@@ -2,6 +2,8 @@ package by.tut.ta.framework.browser;
 
 import by.tut.ta.framework.configuration.PropertyManager;
 import by.tut.ta.framework.logging.Log;
+import by.tut.ta.utils.DirectoryGenerator;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,11 +25,9 @@ public class Browser implements WrapsDriver {
     private Browser() {
         BrowserType browserType = BrowserType.valueOf(System.getProperty("browser",
                 PropertyManager.getBrowserType().toString()));
-        String executionProperty = System.getProperty("grid", "false");
-        boolean isSeleniumGridEnabled = executionProperty.equals("true");
         screenshotDirectoryPath = DirectoryGenerator.create("./target/screenshots");
         Log.debug("Creating instance of WebDriver for " + browserType);
-        wrappedDriver = WebDriverFactory.getWebDriver(browserType, isSeleniumGridEnabled);
+        wrappedDriver = WebDriverFactory.getWebDriver(browserType);
         wrappedDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     }
 
