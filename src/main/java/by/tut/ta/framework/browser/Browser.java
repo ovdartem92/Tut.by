@@ -2,12 +2,11 @@ package by.tut.ta.framework.browser;
 
 import by.tut.ta.framework.configuration.PropertyManager;
 import by.tut.ta.framework.logging.Log;
+import by.tut.ta.framework.ui.HighlightedWebElement;
 import by.tut.ta.utils.DirectoryGenerator;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WrapsDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,10 +16,10 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class Browser implements WrapsDriver {
+    private static final String LOCATOR_NULL_MESSAGE = "LOCATOR cannot be null.";
     private static Browser instance;
     private final WebDriver wrappedDriver;
     private final String screenshotDirectoryPath;
-    private static final String LOCATOR_NULL_MESSAGE = "LOCATOR cannot be null.";
 
     private Browser() {
         BrowserType browserType = BrowserType.valueOf(System.getProperty("browser",
@@ -46,7 +45,7 @@ public class Browser implements WrapsDriver {
                 instance.getWrappedDriver().quit();
             }
         } finally {
-            instance.remove();
+            instance = null;
         }
     }
 
