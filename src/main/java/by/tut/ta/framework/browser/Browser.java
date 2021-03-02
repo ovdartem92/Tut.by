@@ -2,7 +2,7 @@ package by.tut.ta.framework.browser;
 
 import by.tut.ta.framework.configuration.PropertyManager;
 import by.tut.ta.framework.logging.Log;
-import by.tut.ta.framework.ui.HighlightedWebElement;
+import by.tut.ta.framework.ui.elements.HighlightedWebElement;
 import by.tut.ta.utils.DirectoryGenerator;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;

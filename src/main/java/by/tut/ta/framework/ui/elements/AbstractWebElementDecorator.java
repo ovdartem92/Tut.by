@@ -1,4 +1,4 @@
-package by.tut.ta.framework.ui;
+package by.tut.ta.framework.ui.elements;
 
 import org.openqa.selenium.WebElement;
 
