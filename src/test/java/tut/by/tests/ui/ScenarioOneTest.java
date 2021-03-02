@@ -11,6 +11,7 @@ public class ScenarioOneTest extends BaseConfigurationTest {
         homePage
                 .open()
                 .clickToAfishButton()
-                .clickToOnlineCinemas();
+                .clickToOnlineCinemas()
+                .selectGenre("Комедия");
     }
 }
