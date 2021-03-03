@@ -9,7 +9,7 @@ import java.util.Objects;
 
 import static java.lang.String.format;
 
-public class Log {
+public final class Log {
     public static final String MESSAGE_CANNOT_BE_NULL = "Message cannot be null.";
     private static final Logger LOGGER = Logger.getLogger("custom-logger");
 
