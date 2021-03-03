@@ -18,7 +18,7 @@ public class AfishaPage extends BasePage {
     }
 
     public AfishaPage clickOnlineCinemasButton() {
-        By onlineCinemasButtonLocator = By.xpath("//ul[@class='main_menu']//a[@title='Онлайн-кинотеатры']");
+        By onlineCinemasButtonLocator = By.xpath("//a[@title='Онлайн-кинотеатры']");
         Button onlineCinemasButton = new Button(onlineCinemasButtonLocator);
         onlineCinemasButton.click();
         return this;
