@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1" >
     <test name="TestNG"   >
         <classes>
-            <class name="tut.by.tests.ui.ScenarioOneTest" />
+            <class name="tut.by.tests.ui.CheckGenreChangesTest" />
         </classes>
     </test>
 </suite>
