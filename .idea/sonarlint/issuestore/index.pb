@@ -40,3 +40,6 @@ e
 5src/main/java/by/tut/ta/product/pages/AfishaPage.java,f\9\f9caf1dc043955df8908734113dcf468ea78a91d
 h
 8src/test/java/tut/by/tests/ui/CheckGenreChangesTest.java,9\8\98872aeabfa9d0c1778355061ae456bce33b664b
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
