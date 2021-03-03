@@ -132,40 +132,6 @@ public class Browser implements WrapsDriver {
         return screenshotFile;
     }
 
-    public String openNewTab() {
-        Log.debug("Opening new tab");
-        ArrayList<String> oldTabs = new ArrayList<>(wrappedDriver.getWindowHandles());
-        JavascriptExecutor executor = (JavascriptExecutor) wrappedDriver;
-        executor.executeScript("window.open('','_blank');");
-        ArrayList<String> newTabs = new ArrayList<>(wrappedDriver.getWindowHandles());
-        newTabs.removeAll(oldTabs);
-        return newTabs.get(0);
-    }
-
-    public void switchTab(String windowHandle) {
-        Objects.requireNonNull(windowHandle, "Window handle cannot be null.");
-        Log.debug("Switching to the next tab " + windowHandle);
-        wrappedDriver.switchTo().window(windowHandle);
-    }
-
-    public void switchTabByIndex(int index) {
-        Objects.requireNonNull(index, "INDEX cannot be null.");
-        Log.debug("Switching to the tab with index " + index);
-        List<String> allTabs = new ArrayList<>(wrappedDriver.getWindowHandles());
-        wrappedDriver.switchTo().window(allTabs.get(index));
-    }
-
-    public void closeTab(String windowHandle) {
-        Objects.requireNonNull(windowHandle, "Window handle cannot be null.");
-        Log.debug("Closing the next tab " + windowHandle);
-        switchTab(windowHandle);
-        wrappedDriver.close();
-    }
-
-    public String getPageTitle() {
-        return wrappedDriver.getTitle();
-    }
-
     @Override
     public WebDriver getWrappedDriver() {
         Log.debug("Getting WebDriver");

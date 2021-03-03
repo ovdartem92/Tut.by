@@ -73,7 +73,7 @@ public class AfishaPage extends BasePage {
 
     public List<WebElement> getAllResultsOnPage() {
         List<WebElement> searchResultPageList;
-        By searchResultProductsLocator = By.xpath("//li[@class='lists__li ']//div");
+        By searchResultProductsLocator = By.xpath("//div[@id='online-cinema']//div[@class='txt']");
         waitForAllElementsPresenceLocated(searchResultProductsLocator, 10);
         searchResultPageList = Browser.getInstance().getWrappedDriver().findElements(searchResultProductsLocator);
         return searchResultPageList;
