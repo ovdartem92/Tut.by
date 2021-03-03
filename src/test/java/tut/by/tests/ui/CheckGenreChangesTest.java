@@ -43,7 +43,7 @@ public class CheckGenreChangesTest extends BaseConfigurationTest {
 
     @Test(description = "Check the ability to search for animations by genre in the online cinema")
     public void scenarioThree() {
-        String genre = "Фантастика";
+        String genre = "Мелодрама";
         List<WebElement> moveResult = homePage
                 .open()
                 .clickAfishaButton()
