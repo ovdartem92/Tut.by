@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
     }
 
     public AfishaPage clickAfishaButton() {
-        By afishaButtonLocator = By.xpath("(//ul[@class='b-topbar-i']//li)[5]/a");
+        By afishaButtonLocator = By.xpath("(//a[@title='Афиша'])[1]");
         Button afishaButton = new Button(afishaButtonLocator);
         afishaButton.click();
         return new AfishaPage();
